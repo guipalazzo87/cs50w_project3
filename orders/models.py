@@ -2,79 +2,66 @@ from django.db import models
 
 # Create your models here.
 
+class Category(models.Model):
+    name=models.CharField(max_length=64)
 
+    def __str__(self):
+        return f"{self.name}"
+
+
+class RegularPizza(models.Model):
+    name = models.CharField(max_length=50)
+    priceSmall = models.DecimalField(max_digits=4,decimal_places=2,null=True)
+    priceLarge = models.DecimalField(max_digits=4,decimal_places=2,null=True)
+
+    def __str__(self):
+        return f'{self.name}, {self.priceSmall}, {self.priceLarge}'
+
+
+class SicilianPizza(models.Model):
+    name = models.CharField(max_length=50)
+    priceSmall = models.DecimalField(max_digits=4,decimal_places=2,null=True)
+    priceLarge = models.DecimalField(max_digits=4,decimal_places=2,null=True)
+
+    def __str__(self):
+        return f'{self.name}, {self.priceSmall}, {self.priceLarge}'
 
 class PizzaTopping(models.Model):
     topping = models.CharField(max_length=50)
 
-#    def __str__(self):
-#        return self.topping
-
-class Pizza(models.Model):
-    large = models.BooleanField(default=None)
-    number_toppings = models.IntegerField(default=0)
-    toppings = models.ManyToManyField(PizzaTopping, blank=True)
-    sicilian = models.BooleanField(default=None)
-
-#    def __str__(self):
-#        return self.toppings
-
-
-
-class SubFilling(models.Model):
-    filling = models.CharField(max_length=50)
-    priceSmall = models.FloatField()
-    priceLarge = models.FloatField()
-
-#    def __str__(self):
-#        return self.filling
+    def __str__(self):
+        return f'{self.topping}'
 
 
 class Sub(models.Model):
-    large = models.BooleanField(default=None)
-    filling = models.ManyToManyField(SubFilling, blank=True)
-    xtra_cheese = models.BooleanField(default=None)
-
-#    def __str__(self):
-#        return self.filling
-
-class PastaFilling(models.Model):
     filling = models.CharField(max_length=50)
-    price = models.FloatField()
+    priceSmall = models.DecimalField(max_digits=4,decimal_places=2,null=True,blank=True)
+    priceLarge = models.DecimalField(max_digits=4,decimal_places=2,null=True,blank=True)
+    
+    def __str__(self):
+        return f'{self.filling}, {self.priceSmall}, {self.priceLarge}'
 
-#    def __str__(self):
-#        return self.filling
 
 class Pasta(models.Model):
-    filling = models.ManyToManyField(PastaFilling, blank=True)
-
-#    def __str__(self):
-#        return self.filling
-
-class SaladFilling(models.Model):
     filling = models.CharField(max_length=50)
-    price = models.FloatField()
+    price = models.DecimalField(max_digits=4,decimal_places=2,null=True)
 
-#    def __str__(self):
-#        return self.filling
+    def __str__(self):
+        return f'{self.filling}, {self.price}'
+
 
 class Salad(models.Model):
-    filling = models.ManyToManyField(SaladFilling, blank=True)
-
-#    def __str__(self):
-#        return self.filling
-
-class DinnerFilling(models.Model):
     filling = models.CharField(max_length=50)
-    priceSmall = models.FloatField()
-    priceLarge = models.FloatField()
+    price = models.DecimalField(max_digits=4,decimal_places=2,null=True)
 
-#    def __str__(self):
-#        return self.filling
+    def __str__(self):
+        return f'{self.filling}, {self.price}'
+
 
 class DinnerPlatter(models.Model):
-    large = models.BooleanField(default=None)
-    filling = models.ManyToManyField(DinnerFilling, blank=True)
+    filling = models.CharField(max_length=50)
+    priceSmall = models.DecimalField(max_digits=4,decimal_places=2,null=True,blank=True)
+    priceLarge = models.DecimalField(max_digits=4,decimal_places=2,null=True,blank=True)
 
-#    def __str__(self):
-#        return self.filling
+    def __str__(self):
+        return f'{self.filling}, {self.priceSmall}, {self.priceLarge}'

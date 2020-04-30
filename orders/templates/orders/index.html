@@ -1,57 +1,15 @@
 {% extends "orders/base.html" %}
 {% block content %}
-    Pizza options: 
-{% if pizza %}
-	<ul>
-	{% for item in pizza %}
-		<li>{{item}}</li>
-	{% endfor%}
-{% else %}
-	<p>No pizzas available.</p>
-{% endif %}
-<br>
+<div class='p-3'>
+    
+    {{ RegularPizza }}
 
-{% if sub %}
-	<ul>
-	{% for item in sub %}
-		<li>{{item}}</li>
-	{% endfor%}
-{% else %}
-	<p>No subs available.</p>
-{% endif %}
-<br>
 
-{% if pasta %}
-	<ul>
-	{% for item in pasta %}
-		<li>{{item}}</li>
-	{% endfor%}
-{% else %}
-	<p>No pastas available.</p>
-{% endif %}
-<br>
+    {{ context }}  
 
-{% if salad %}
-	<ul>
-	{% for item in salad %}
-		<li>{{item}}</li>
-	{% endfor%}
-{% else %}
-	<p>No salads available.</p>
-{% endif %}
-<br>
-
-{% if dinner %}
-	<ul>
-	{% for item in dinner %}
-		<li>{{item}}</li>
-	{% endfor%}
-{% else %}
-	<p>No dinner platters available.</p>
-{% endif %}
-<br>
+    {% for item in context %}
+      {{ item }}
+    {% endfor %}
+    
 
 {% endblock content %}
-
-
-
