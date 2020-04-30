@@ -6,10 +6,10 @@ from .models import *
 # Create your views here.
 def index(request):
     pizza = Pizza.objects.all()
-    sub = Sub.objects
-    pasta = Pasta.objects
-    salad = Salad.objects
-    dinner = DinnerPlatter.objects
+    sub = Sub.objects.all()
+    pasta = Pasta.objects.all()
+    salad = Salad.objects.all()
+    dinner = DinnerPlatter.objects.all()
 
     context = { 
     'pizza': pizza,
