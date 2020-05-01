@@ -31,7 +31,7 @@ if settings.DEBUG:
         # url(r'^__debug__/', include(debug_toolbar.urls)),
 
     ] + [
-    path("admin/", admin.site.urls),
+    path("admin/", admin.site.urls, name='admin'),
     path("", include("orders.urls")),
 	path('register/', user_views.register, name='register'),
 	path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),

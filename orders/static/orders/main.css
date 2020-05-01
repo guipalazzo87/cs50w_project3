@@ -1,23 +1,28 @@
 body {
-  background: #fafafa;
+  background: #efe9e9;
   color: #333333;
   margin-top: 5rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #444444;
+  color: #333333;
 }
 
 ul {
   margin: 0;
 }
 
+td {
+  padding: 5px;
+  padding-bottom: 1px;
+}
+
 .bg-steel {
-  background-color: #5f788a;
+  background-color: #7f324e;
 }
 
 .site-header .navbar-nav .nav-link {
-  color: #cbd5db;
+  color: #e6e6e6;
 }
 
 .site-header .navbar-nav .nav-link:hover {

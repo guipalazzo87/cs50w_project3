@@ -1,15 +1,170 @@
 {% extends "orders/base.html" %}
 {% block content %}
-<div class='p-3'>
-    
-    {{ RegularPizza }}
+<div class='content-section p-5'>
+
+  <table class='table-small w-auto mx-auto text-center mb-3'>
+    <h4 class='text-center'>Regular Pizza</h4>
+    <thead class='thead-light'>
+      <tr>
+        <th>Name</th>
+        <th>Small</th>
+        <th>Large</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in RegularPizza %}
+      <tr>
+        <td>{{ i.name }}</td>
+        {% if i.priceSmall %}
+          <td>$ {{ i.priceSmall }}</td>
+        {% endif %}
+        {% if i.priceLarge %}
+          <td>$ {{ i.priceLarge }}</td>
+        {% endif %}
+        {% endfor %}
+      </tr>
+    </tbody>
+  </table>
+
+<table class='table-small w-auto mx-auto text-center mb-3'>
+    <h4 class='text-center'>Sicilian Pizza</h4>
+    <thead class='thead-light'>
+      <tr>
+        <th>Name</th>
+        <th>Small</th>
+        <th>Large</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in SicilianPizza %}
+      <tr>
+        <td>{{ i.name }}</td>
+        {% if i.priceSmall %}
+          <td>$ {{ i.priceSmall }}</td>
+        {% endif %}
+        {% if i.priceLarge %}
+          <td>$ {{ i.priceLarge }}</td>
+        {% endif %}
+        {% endfor %}
+      </tr>
+    </tbody>
+  </table>
+
+<table class='table-small w-auto mx-auto text-center mb-3'>
+    <h4 class='text-center'>Toppings</h4>
+  </table>
+
+<div class="d-flex mb-3 text-dark flex-wrap justify-content-center">
+  {% for i in Toppings %}
+    <div class="p-2 bg-light border rounded-lg justify-content hoverable">
+    {{ i.name }}
+    </div>
+  {% endfor %}
+</div>
+
+<table class='table-small w-auto mx-auto text-center mb-3'>
+    <h4 class='text-center'>Subs</h4>
+    <thead class='thead-light'>
+      <tr>
+        <th>Name</th>
+        <th>Small</th>
+        <th>Large</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in Sub %}
+      <tr>
+        <td>{{ i.name }}</td>
+        {% if i.priceSmall == None %}
+          <td>N/A</td>          
+        {% else %}
+          <td>$ {{ i.priceSmall }}</td>
+        {% endif %}
+        {% if i.priceLarge %}
+          <td>$ {{ i.priceLarge }}</td>
+        {% endif %}
+        {% endfor %}
+      </tr>
+    </tbody>
+  </table>
+
+<table class='table-small w-auto mx-auto text-center mb-3'>
+    <h4 class='text-center'>Pasta</h4>
+    <p class='text-center'>(baked ziti with following fillings)</p>
+    <thead class='thead-light'>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in Pasta %}
+      <tr>
+        <td>{{ i.name }}</td>
+        {% if i.priceSmall %}
+          <td>$ {{ i.priceSmall }}</td>
+        {% endif %}
+        {% if i.priceLarge %}
+          <td>$ {{ i.priceLarge }}</td>
+        {% endif %}
+        {% endfor %}
+      </tr>
+    </tbody>
+  </table>
 
 
-    {{ context }}  
+<table class='table-small w-auto mx-auto text-center mb-3'>
+    <h4 class='text-center'>Salads</h4>
+    <thead class='thead-light'>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in Salad %}
+      <tr>
+        <td>{{ i.name }}</td>
+        {% if i.priceSmall %}
+          <td>$ {{ i.priceSmall }}</td>
+        {% endif %}
+        {% if i.priceLarge %}
+          <td>$ {{ i.priceLarge }}</td>
+        {% endif %}
+        {% endfor %}
+      </tr>
+    </tbody>
+  </table>
 
-    {% for item in context %}
-      {{ item }}
-    {% endfor %}
-    
+<table class='table-small w-auto mx-auto text-center mb-3'>
+    <h4 class='text-center'>Dinner Plates</h4>
+    <thead class='thead-light'>
+      <tr>
+        <th>Name</th>
+        <th>Small</th>
+        <th>Large</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in DinnerPlatter %}
+      <tr>
+        <td>{{ i.name }}</td>
+        {% if i.priceSmall %}
+          <td>$ {{ i.priceSmall }}</td>
+        {% endif %}
+        {% if i.priceLarge %}
+          <td>$ {{ i.priceLarge }}</td>
+        {% endif %}
+        {% endfor %}
+      </tr>
+    </tbody>
+  </table>
 
+
+</div>
 {% endblock content %}
+
+
+
+
+

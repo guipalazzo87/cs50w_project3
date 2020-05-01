@@ -27,41 +27,41 @@ class SicilianPizza(models.Model):
         return f'{self.name}, {self.priceSmall}, {self.priceLarge}'
 
 class PizzaTopping(models.Model):
-    topping = models.CharField(max_length=50)
+    name = models.CharField(max_length=50)
 
     def __str__(self):
-        return f'{self.topping}'
+        return f'{self.name}'
 
 
 class Sub(models.Model):
-    filling = models.CharField(max_length=50)
+    name = models.CharField(max_length=50)
     priceSmall = models.DecimalField(max_digits=4,decimal_places=2,null=True,blank=True)
     priceLarge = models.DecimalField(max_digits=4,decimal_places=2,null=True,blank=True)
     
     def __str__(self):
-        return f'{self.filling}, {self.priceSmall}, {self.priceLarge}'
+        return f'{self.name}, {self.priceSmall}, {self.priceLarge}'
 
 
 class Pasta(models.Model):
-    filling = models.CharField(max_length=50)
-    price = models.DecimalField(max_digits=4,decimal_places=2,null=True)
+    name = models.CharField(max_length=50)
+    priceLarge = models.DecimalField(max_digits=4,decimal_places=2,null=True)
 
     def __str__(self):
-        return f'{self.filling}, {self.price}'
+        return f'{self.name}, {self.priceLarge}'
 
 
 class Salad(models.Model):
-    filling = models.CharField(max_length=50)
-    price = models.DecimalField(max_digits=4,decimal_places=2,null=True)
+    name = models.CharField(max_length=50)
+    priceLarge = models.DecimalField(max_digits=4,decimal_places=2,null=True)
 
     def __str__(self):
-        return f'{self.filling}, {self.price}'
+        return f'{self.name}, {self.priceLarge}'
 
 
 class DinnerPlatter(models.Model):
-    filling = models.CharField(max_length=50)
+    name = models.CharField(max_length=50)
     priceSmall = models.DecimalField(max_digits=4,decimal_places=2,null=True,blank=True)
     priceLarge = models.DecimalField(max_digits=4,decimal_places=2,null=True,blank=True)
 
     def __str__(self):
-        return f'{self.filling}, {self.priceSmall}, {self.priceLarge}'
+        return f'{self.name}, {self.priceSmall}, {self.priceLarge}'
