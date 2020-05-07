@@ -1,7 +1,7 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-
+from django.urls import reverse
 
 from .models import *
 
@@ -21,3 +21,9 @@ def index(request):
 
     return render(request, 'orders/index.html', context)
 
+# def add(request, name, price):
+#     item_list = []
+#     item_list.append(name)
+#     item_list.append(price)
+#     print(item_list)
+#     return reverse('index')

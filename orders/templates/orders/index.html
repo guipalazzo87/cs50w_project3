@@ -78,11 +78,37 @@
         {% if i.priceSmall == None %}
           <td>N/A</td>          
         {% else %}
-          <td>$ {{ i.priceSmall }}</td>
+          <td>
+          $ {{ i.priceSmall }}
+            <button type="button" id="btnAdd" onclick="addCart(this)"
+            data-type="Sub"
+            data-name="{{ i.name }}" 
+            data-size="Small"
+            data-price="{{ i.priceSmall }}" 
+            class="class=btn btn-light btn-xs">+</button>
+            <button type="button" id="btnAdd" onclick="remCart(this)"
+            data-type="Sub"
+            data-name="{{ i.name }}" 
+            data-size="Small"
+            data-price="{{ i.priceSmall }}" 
+            class="class=btn btn-light btn-xs">-</button>
+          </td>
         {% endif %}
         {% if i.priceLarge %}
-          <td>$ {{ i.priceLarge }}</td>
-        {% endif %}
+          <td>$ {{ i.priceLarge }}
+            <button type="button" id="btnAdd" onclick="addCart(this)"
+            data-type="Sub"
+            data-name="{{ i.name }}" 
+            data-size="Large"
+            data-price="{{ i.priceSmall }}" 
+            class="class=btn btn-light btn-xs">+</button>
+            <button type="button" id="btnAdd" onclick="remCart(this)"
+            data-type="Sub"
+            data-name="{{ i.name }}" 
+            data-size="Large"
+            data-price="{{ i.priceSmall }}" 
+            class="class=btn btn-light btn-xs">-</button>
+          </td>        {% endif %}
         {% endfor %}
       </tr>
     </tbody>
@@ -102,11 +128,37 @@
       <tr>
         <td>{{ i.name }}</td>
         {% if i.priceSmall %}
-          <td>$ {{ i.priceSmall }}</td>
+          <td>
+          $ {{ i.priceSmall }}
+            <button type="button" id="btnAdd" onclick="addCart(this)"
+            data-type="Pasta"
+            data-name="{{ i.name }}" 
+            data-size="Small"
+            data-price="{{ i.priceSmall }}" 
+            class="class=btn btn-light btn-xs">+</button>
+            <button type="button" id="btnAdd" onclick="remCart(this)"
+            data-type="Pasta"
+            data-name="{{ i.name }}" 
+            data-size="Small"
+            data-price="{{ i.priceSmall }}" 
+            class="class=btn btn-light btn-xs">-</button>
+          </td>
         {% endif %}
         {% if i.priceLarge %}
-          <td>$ {{ i.priceLarge }}</td>
-        {% endif %}
+          <td>$ {{ i.priceLarge }}
+            <button type="button" id="btnAdd" onclick="addCart(this)"
+            data-type="Pasta"
+            data-name="{{ i.name }}" 
+            data-size="Large"
+            data-price="{{ i.priceLarge }}" 
+            class="class=btn btn-light btn-xs">+</button>
+            <button type="button" id="btnAdd" onclick="remCart(this)"
+            data-type="Pasta"
+            data-name="{{ i.name }}" 
+            data-size="Large"
+            data-price="{{ i.priceLarge }}" 
+            class="class=btn btn-light btn-xs">-</button>
+          </td>        {% endif %}
         {% endfor %}
       </tr>
     </tbody>
@@ -126,11 +178,37 @@
       <tr>
         <td>{{ i.name }}</td>
         {% if i.priceSmall %}
-          <td>$ {{ i.priceSmall }}</td>
+          <td>
+          $ {{ i.priceSmall }}
+            <button type="button" id="btnAdd" onclick="addCart(this)"
+            data-type="Salad"
+            data-name="{{ i.name }}" 
+            data-size="Small"
+            data-price="{{ i.priceSmall }}" 
+            class="class=btn btn-light btn-xs">+</button>
+            <button type="button" id="btnAdd" onclick="remCart(this)"
+            data-type="Salad"
+            data-name="{{ i.name }}" 
+            data-size="Small"
+            data-price="{{ i.priceSmall }}" 
+            class="class=btn btn-light btn-xs">-</button>
+          </td>
         {% endif %}
         {% if i.priceLarge %}
-          <td>$ {{ i.priceLarge }}</td>
-        {% endif %}
+          <td>$ {{ i.priceLarge }}
+            <button type="button" id="btnAdd" onclick="addCart(this)"
+            data-type="Salad"
+            data-name="{{ i.name }}" 
+            data-size="Large"
+            data-price="{{ i.priceLarge }}" 
+            class="class=btn btn-light btn-xs">+</button>
+            <button type="button" id="btnAdd" onclick="remCart(this)"
+            data-type="Salad"
+            data-name="{{ i.name }}" 
+            data-size="Large"
+            data-price="{{ i.priceLarge }}" 
+            class="class=btn btn-light btn-xs">-</button>
+          </td>        {% endif %}
         {% endfor %}
       </tr>
     </tbody>
@@ -150,21 +228,115 @@
       <tr>
         <td>{{ i.name }}</td>
         {% if i.priceSmall %}
-          <td>$ {{ i.priceSmall }}</td>
+          <td>
+            $ {{ i.priceSmall }}
+            <button type="button" id="btnAdd" onclick="addCart(this)"
+            data-type="Platter"
+            data-name="{{ i.name }}" 
+            data-size="Small"
+            data-price="{{ i.priceSmall }}" 
+            class="class=btn btn-light btn-xs">+</button>
+            <button type="button" id="btnAdd" onclick="remCart(this)"
+            data-type="Platter"
+            data-name="{{ i.name }}" 
+            data-size="Small"
+            data-price="{{ i.priceSmall }}" 
+            class="class=btn btn-light btn-xs">-</button>
+          </td>
         {% endif %}
         {% if i.priceLarge %}
-          <td>$ {{ i.priceLarge }}</td>
+          <td>$ {{ i.priceLarge }}
+            <button type="button" id="btnAdd" onclick="addCart(this)"
+            data-type="Platter"
+            data-name="{{ i.name }}" 
+            data-size="Large"
+            data-price="{{ i.priceSmall }}" 
+            class="class=btn btn-light btn-xs">+</button>
+            <button type="button" id="btnAdd" onclick="remCart(this)"
+            data-type="Platter"
+            data-name="{{ i.name }}" 
+            data-size="Large"
+            data-price="{{ i.priceSmall }}" 
+            class="class=btn btn-light btn-xs">-</button>
+          </td>
         {% endif %}
         {% endfor %}
       </tr>
     </tbody>
   </table>
-
-
 </div>
 {% endblock content %}
 
+{% block sidebar %}
+<!-- Side Bar -->
+<!--  #sidebar has a padding-top 50px in the main.css
+      only to avoid getting under the navbar. I'd like
+      to fix this someday-->
+<div class="col-md-4" id="sidebar">
+  <div class="content-section  sticky-top" id="cart">
+    <h3>Cart</h3>
+    <p>Select itens on the left to add to your cart</p>
+      <ul class="list-group" id="cart-list"></ul>
+    <span class="list-group-item list-group-item-light text-right">Total: $ <span id="order_total"></span></span>
+    
+    <div class="btn-group container-fluid" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-danger" onclick="cleanCart(this)">Empty Cart</button>
+      <button type="button" class="btn btn-success" onclick="">Proceed to Checkout</button>
+    </div>
+  </div>
+</div>
+{% endblock sidebar%}
 
 
 
+{% block javascript %}
+<script type="text/javascript">
+  var total = 0
+  document.getElementById('order_total').innerHTML = total;
 
+  function addCart(item) {
+    var itemType = item.getAttribute("data-type");
+    var itemName = item.getAttribute("data-name");
+    var itemSize = item.getAttribute("data-size");
+    var itemPrice = item.getAttribute("data-price");
+
+    var node = document.createElement("li");
+    var textnode = document.createTextNode(itemSize + " " + itemType + ", " + itemName + ", $ " + itemPrice);
+    node.appendChild(textnode);
+    node.className = "list-group-item list-group-item-light";
+    var id = itemSize + itemType + itemName.replace(/\s+/g, '-');
+    node.id = id;
+    document.getElementById("cart-list").appendChild(node);
+
+    total += Number(itemPrice);
+    document.getElementById('order_total').innerHTML = total.toFixed(2);
+  }
+
+  function remCart(item) {
+    var itemType = item.getAttribute("data-type");
+    var itemName = item.getAttribute("data-name");
+    var itemSize = item.getAttribute("data-size");
+    var itemPrice = item.getAttribute("data-price");
+
+    var itemInCart = document.getElementById(itemSize + itemType + itemName.replace(/\s+/g, '-'))
+
+    if(itemInCart){
+      itemInCart.parentNode.removeChild(itemInCart);
+      total -= Number(itemPrice);
+      document.getElementById('order_total').innerHTML = total.toFixed(2);
+    }
+  }
+
+  function cleanCart() {
+    var cart = document.getElementById("cart-list");
+    if (cart.hasChildNodes()) {
+      var check = confirm("Clean your entire cart?")
+      if (check == true){
+        cart.textContent = '';
+        total = 0;
+        document.getElementById('order_total').innerHTML = total.toFixed(2);
+      }
+    }
+  }
+</script>
+{% endblock javascript %}
